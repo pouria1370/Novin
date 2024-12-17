@@ -11,7 +11,7 @@
 - MUI-Tailwind (for styling)
 - React-Router (for route guarding and navigation)
 - React-hook-form (for optimized minimum-render form handling)
-- Zustand (for state-management)
+- Zustand (for state-management )
 - Vite (for fast and optimized tree-shacking bundler)
 
   sanap-sample(project tree)

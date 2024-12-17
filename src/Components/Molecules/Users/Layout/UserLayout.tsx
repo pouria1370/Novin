@@ -18,10 +18,10 @@ const UserLayout = ({ children }: { children: ReactNode }) => {
     navigate("/login");
   };
   return (
-    <div>
-      <div className="flex flex-row ">
+    <div className="items-center justify-center bg-gradient-to-l from-primary-100 to-green-600  flex flex-col gap-3">
+      <div className="  ">
         {existToken ? (
-          <h1 onClick={() => logoutHandler()} className="text-red-700">
+          <h1 onClick={() => logoutHandler()} className="text-slate-100">
             خروج
           </h1>
         ) : null}

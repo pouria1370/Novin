@@ -12,7 +12,7 @@ function App() {
         <Route index element={<AuthViewer />} />
         <Route path="/login" element={<AuthViewer />} />
         <Route element={<RequireAuth />}>
-          <Route path="/welcome" element={<UsersViewer />} />
+          <Route path="/welcome" element={<UsersViewer />}></Route>
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>

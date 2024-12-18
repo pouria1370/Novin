@@ -1,17 +1,12 @@
 import useGetSingleUser from "@apis/Users/Hooks/useGetSingleUser";
 import { Skeleton } from "@mui/material";
-import { useUser } from "@store/OtpForms/useUsers";
-import { useLayoutEffect } from "react";
+
 import { useParams } from "react-router";
 
 const UserDetail = () => {
   const params = useParams();
   const user = useGetSingleUser(+params?.id || 0);
-  const ctx = useUser();
-  useLayoutEffect(() => {
-    ctx.setOpen(true);
-  }, []);
-  console.log(ctx);
+
   return (
     <>
       {user.isLoading ? (

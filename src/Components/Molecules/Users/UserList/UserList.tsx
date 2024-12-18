@@ -9,7 +9,6 @@ const UserList = () => {
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
     setPage(value);
   };
-  console.log(users.data?.data);
   return (
     <div className="grid lg:grid-cols-3 justify-items-center gap-6 gap-y-7 md:grid-cols-2 grid-cols-1">
       {users.data?.data.map((item, index) => (

@@ -3,13 +3,17 @@ import {
   Card,
   CardHeader,
   Avatar,
-  IconButton,
   CardMedia,
   CardContent,
   Typography,
 } from "@mui/material";
+import { useUser } from "@store/OtpForms/useUsers";
+import { useNavigate } from "react-router";
 
 const UserCard = ({ user }: { user: TUserType }) => {
+  const navigate = useNavigate();
+  const ctx = useUser();
+
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
@@ -18,8 +22,10 @@ const UserCard = ({ user }: { user: TUserType }) => {
             {user.first_name.charAt(0)}
           </Avatar>
         }
-        title={user.email}
-        subheader={`id:${user.id}`}
+        title={<div className="text-center text-red-700">{user.email}</div>}
+        subheader={
+          <div className="text-xl text-primary-100 text-end">{`id:${user.id}`}</div>
+        }
       />
       <CardMedia
         component="img"
@@ -36,6 +42,16 @@ const UserCard = ({ user }: { user: TUserType }) => {
           <strong className="text-red-700">{user.last_name}</strong>
         </Typography>
       </CardContent>
+
+      <div
+        onClick={() => {
+          ctx.setOpen(true);
+          navigate(`/welcome/${user.id}`);
+        }}
+        className="animate-bounce cursor-pointer text-center text-primary-100"
+      >
+        more details
+      </div>
     </Card>
   );
 };

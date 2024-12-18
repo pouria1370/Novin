@@ -7,7 +7,7 @@ const useGetSingleUser = (key: number) => {
       const [, key] = queryKey; // Extract the second value in the queryKey array
       return usersServices.GetSingleUser({ id: key as number });
     },
-    queryKey: ["GET_USERS", key],
+    queryKey: ["GET_USER", key],
   });
 };
 

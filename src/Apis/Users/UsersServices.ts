@@ -17,7 +17,7 @@ class UsersServices {
     return responce.data;
   }
   async GetSingleUser({ id }: { id: number }) {
-    const response = await Axios.post<TSingleUserResponseType>(`/users/${id}`);
+    const response = await Axios.get<TSingleUserResponseType>(`/users/${id}`);
     if (!response.data) {
       throw response.data;
     }

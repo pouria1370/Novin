@@ -5,6 +5,7 @@ import PageNotFound from "./Pages/PageNotFound";
 import RequireAuth from "./Pages/RequireAuth";
 import AuthViewer from "./Pages/AuthViewer";
 import UsersViewer from "./Pages/UsersViewer";
+import UserDetail from "@components/Molecules/Users/UserDetail/UserDetail";
 function App() {
   return (
     <BrowserRouter>
@@ -12,7 +13,9 @@ function App() {
         <Route index element={<AuthViewer />} />
         <Route path="/login" element={<AuthViewer />} />
         <Route element={<RequireAuth />}>
-          <Route path="/welcome" element={<UsersViewer />}></Route>
+          <Route path="/welcome" element={<UsersViewer />}>
+            <Route path=":id" element={<UserDetail />} />
+          </Route>
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
